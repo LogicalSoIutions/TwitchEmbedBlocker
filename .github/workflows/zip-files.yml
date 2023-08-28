@@ -1,26 +1,23 @@
 name: Zip Files After Commit
-
-on:
+'on':
   push:
     branches:
       - main
-
+  workflow_dispatch: null
 jobs:
   zip-files:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install zip utility
-      run: sudo apt-get install zip
-
-    - name: Zip files
-      run: zip -r twitch-embed-blocker.zip Mozilla/
-
-    - name: Upload zipped files
-      uses: actions/upload-artifact@v2
-      with:
-        name: twitch-embed-blocker
-        path: twitch-embed-blocker.zip
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Debugging - List files
+        run: ls -al     
+      - name: Install zip utility
+        run: sudo apt-get install zip
+      - name: Zip files
+        run: zip -r twitch-embed-blocker.zip Mozilla/
+      - name: Upload zipped files
+        uses: actions/upload-artifact@v2
+        with:
+          name: twitch-embed-blocker
+          path: twitch-embed-blocker.zip
