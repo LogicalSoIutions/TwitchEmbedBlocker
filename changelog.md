@@ -1,3 +1,9 @@
+## **1.0.4** *08-28-2023*
+
+### *UPDATED*
+
+- Removes embeds on NoFoodAfterMidnight website as well (results in faster page load times)
+
 ## **1.0.3** *08-28-2023*
 
 ### *UPDATED*
