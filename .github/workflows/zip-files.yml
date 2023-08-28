@@ -1,4 +1,4 @@
-name: Upload Mozilla Folder
+name: Create Release and Upload Mozilla Folder
 
 on:
   push:
@@ -7,15 +7,29 @@ on:
   workflow_dispatch:
 
 jobs:
-  upload-files:
+  create-release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Upload Mozilla folder as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: twitch-embed-blocker
-          path: Mozilla/
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Zip Mozilla folder
+      run: zip -r twitch-embed-blocker.zip Mozilla/
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: ./twitch-embed-blocker.zip
+        asset_name: twitch-embed-blocker.zip
+        asset_content_type: application/zip
