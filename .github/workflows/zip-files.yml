@@ -22,6 +22,7 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}  # Add this line
 
     - name: Zip Mozilla folder
       run: zip -r twitch-embed-blocker.zip Mozilla/
@@ -29,7 +30,8 @@ jobs:
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./twitch-embed-blocker.zip
         asset_name: twitch-embed-blocker.zip
         asset_content_type: application/zip
+        token: ${{ secrets.GITHUB_TOKEN }}  # Add this line
