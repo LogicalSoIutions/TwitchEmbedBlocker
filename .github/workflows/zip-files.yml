@@ -22,6 +22,8 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Zip Mozilla folder
       run: zip -r twitch-embed-blocker.zip Mozilla/
@@ -34,4 +36,4 @@ jobs:
         asset_name: twitch-embed-blocker.zip
         asset_content_type: application/zip
       env:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
