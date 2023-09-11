@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "domainType": "thirdParty",
+            "isUrlFilterCaseSensitive": false,
+            "urlFilter": "embed.twitch.tv"
+        }
+    }
+]
