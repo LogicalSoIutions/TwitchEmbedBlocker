@@ -1,28 +1,35 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Twitch Embed Blocker",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Blocks Twitch embeds on web pages",
   "author": "LogicalSolutions",
   "homepage_url": "https://github.com/LogicalSoIutions/TwitchEmbedBlocker",
   "permissions": [
-    "http://*.fextralife.com/*",
-    "https://*.fextralife.com/*",
-    "https://*.eft-ammo.com/*",
-    "http://*.eft-ammo.com/*"
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.fextralife.com/*",
+    "*://*.eft-ammo.com/*"
   ],
   "icons": {
     "16": "logo_16.png",
     "48": "logo_48.png",
     "128": "logo_128.png"
   },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "default",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
   "content_scripts": [
     {
       "matches": [
-        "http://*.fextralife.com/*",
-        "https://*.fextralife.com/*",
-        "https://*.eft-ammo.com/*",
-        "http://*.eft-ammo.com/*"
+        "*://www.eft-ammo.com/*"
       ],
       "js": [
         "content.js"

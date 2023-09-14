@@ -1,3 +1,10 @@
+## **1.0.5** *09-11-2023*
+
+### *UPDATED*
+
+- Migrated Firefox to use MV3
+- Use deleclarativeNetRequest to block Twitch embed network requests
+
 ## **1.0.4** *08-28-2023*
 
 ### *UPDATED*
