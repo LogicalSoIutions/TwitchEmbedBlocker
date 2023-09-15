@@ -35,5 +35,12 @@
         "content.js"
       ]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{f524ffaf-0daa-47e7-b294-3e7d81f70d4d}",
+      "strict_min_version": "110.0"
+    }
+  }
+  
 }
