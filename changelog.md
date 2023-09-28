@@ -1,3 +1,9 @@
+## **1.0.6** *09-28-2023*
+
+### *UPDATED*
+
+- Added albiononline2d.com ~ embed will no longer show
+
 ## **1.0.5** *09-11-2023*
 
 ### *UPDATED*

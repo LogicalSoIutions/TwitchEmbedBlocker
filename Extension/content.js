@@ -19,7 +19,17 @@ function cleanupHTML () {
       }
     }
   }
+
+  const iframes = document.querySelectorAll('iframe');
+  for (const iframe of iframes) {
+    if (iframe.src && iframe.src.includes('https://player.twitch.tv/') && iframe.src.includes('parent=albiononline2d.com')) {
+      const parentDiv = iframe.closest('div.col-12.text-center');
+      if (parentDiv) {
+        parentDiv.remove();
+      }
+    }
+  }
+  
 }
 
-// Tidy up the page
 cleanupHTML()

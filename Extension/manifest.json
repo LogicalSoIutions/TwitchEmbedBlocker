@@ -10,7 +10,8 @@
   ],
   "host_permissions": [
     "*://*.fextralife.com/*",
-    "*://*.eft-ammo.com/*"
+    "*://*.eft-ammo.com/*",
+    "*://*.albiononline2d.com/*"
   ],
   "icons": {
     "16": "logo_16.png",
@@ -29,7 +30,9 @@
   "content_scripts": [
     {
       "matches": [
-        "*://www.eft-ammo.com/*"
+        "*://*.fextralife.com/*",
+        "*://*.eft-ammo.com/*",
+        "*://*.albiononline2d.com/*"
       ],
       "js": [
         "content.js"
