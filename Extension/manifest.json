@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Twitch Embed Blocker",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Blocks Twitch embeds on web pages",
   "author": "LogicalSolutions",
   "homepage_url": "https://github.com/LogicalSoIutions/TwitchEmbedBlocker",
@@ -11,7 +11,8 @@
   "host_permissions": [
     "*://*.fextralife.com/*",
     "*://*.eft-ammo.com/*",
-    "*://*.albiononline2d.com/*"
+    "*://*.albiononline2d.com/*",
+    "*://*.nwdb.info/*"
   ],
   "icons": {
     "16": "logo_16.png",
@@ -32,11 +33,13 @@
       "matches": [
         "*://*.fextralife.com/*",
         "*://*.eft-ammo.com/*",
-        "*://*.albiononline2d.com/*"
+        "*://*.albiononline2d.com/*",
+        "*://*.nwdb.info/*"
       ],
       "js": [
         "content.js"
-      ]
+      ],
+      "run_at": "document_idle"
     }
   ],
   "browser_specific_settings": {
