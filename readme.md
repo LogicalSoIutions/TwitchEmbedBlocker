@@ -1,6 +1,6 @@
 Twitch Embed Blocker 
 
-Block unwanted Twitch Embeds on the websites of Fextralife and NoFoodAfterMidnight.
+Block unwanted Twitch Embeds on the websites of AlbionOnline2D, Fextralife, NoFoodAfterMidnight, and NWDB.
 
 Will add more upon request.
 
